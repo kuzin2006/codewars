@@ -1,0 +1,8 @@
+def longest_consec(strarr, k):
+    concats = [''.join(strarr[i:i+k]) for i in range(0, len(strarr)-k+1)] \
+               if strarr and k > 0 else ""
+    return [val for val in concats if len(val) == max([len(i) for i in concats])][0]
+
+
+print(longest_consec(["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"], 3))
+

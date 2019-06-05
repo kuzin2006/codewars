@@ -1,0 +1,14 @@
+def group_by_commas(n):
+    num = n
+    result = []
+    while num != 0:
+        result.append(num % 1000)
+        num //= 1000
+
+    ret = str(result[-1])
+    for dec in reversed(result[:-1]):
+        ret += ",{:03d}".format(dec)
+    return ret
+
+
+print(group_by_commas(10000013))
